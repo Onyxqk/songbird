@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  userInput = "Taylor Swift"
+  searchResults = []
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+  }
+
+  search() {
+    this.dataService.getData(this.userInput)
+    .subscribe(data => {
+      this.searchResults.push()
+    })
+    console.log(this.searchResults)
   }
 
 }
