@@ -16,11 +16,13 @@ export class SearchComponent implements OnInit {
   }
 
   search(userInput: string) {
-    this.dataService.getData(userInput)
-    .subscribe(data => {
-      this.searchResults.push()
-    })
-    console.log(this.searchResults)
+    if(userInput.length >=1) {
+      this.dataService.getData(userInput)
+      .subscribe(data => {
+        this.searchResults.push()
+      })
+      console.log(this.searchResults)
+    }  
   }
 
 }
