@@ -8,7 +8,6 @@ import { DataService } from '../data.service';
 })
 export class SearchComponent implements OnInit {
 
-  userInput = "Taylor Swift"
   searchResults = []
 
   constructor(private dataService: DataService) { }
@@ -16,8 +15,8 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  search() {
-    this.dataService.getData(this.userInput)
+  search(userInput: string) {
+    this.dataService.getData(userInput)
     .subscribe(data => {
       this.searchResults.push()
     })
