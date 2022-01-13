@@ -8,7 +8,7 @@ import { DataService } from '../data.service';
 })
 export class SearchComponent implements OnInit {
 
-  searchResults = []
+  searchResults: string[] = []
 
   constructor(private dataService: DataService) { }
 
@@ -19,9 +19,11 @@ export class SearchComponent implements OnInit {
     if(userInput.length >=1) {
       this.dataService.getData(userInput)
       .subscribe(data => {
-        this.searchResults.push()
+        for(let d in data) {
+          this.searchResults.push(d)
+        }
       })
-      console.log(this.searchResults)
+      JSON.stringify(this.searchResults)
     }  
   }
 
