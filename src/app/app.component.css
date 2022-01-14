@@ -2,13 +2,20 @@
     background-color: #69349A;
     font-family: "Ubuntu";
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    display: block;
+    width: 100%;
+    text-align: center;
 }
 
 .toolbar-title {
     font-size: xx-large;
     color: white;
     text-decoration: none;
-    padding-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
+    display: block;
+}
+
+.toolbar-title-text {
+    display: inline-block;
+    vertical-align:super;
+
 }
