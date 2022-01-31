@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TrackLengthPipe } from '../track-length.pipe';
 
 import { ResultsComponent } from './results.component';
 
@@ -8,7 +9,7 @@ describe('ResultsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ResultsComponent ]
+      declarations: [ ResultsComponent, TrackLengthPipe ]
     })
     .compileComponents();
   });

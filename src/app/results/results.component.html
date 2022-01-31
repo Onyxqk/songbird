@@ -1,7 +1,9 @@
-<div class="results">
-    <div class="card">
-        <h1> {{results.tracks.items[0].name}}</h1>
-        <h2> {{results.tracks.items[0].artists[0].name}}</h2>
-        <p><b>Track length:</b> {{results.tracks.items[0].duration_ms | trackLength}}</p>
+<div id="results" class="results">
+    <div id="card" class="card" style="background-image: url({{results.tracks.items[0].album.images[0].url}});">
+        <div id="cardContent" class="cardContent">
+            <h1 id="trackName"> {{results.tracks.items[0].name}}</h1>
+            <h2 id="artistName"> {{results.tracks.items[0].artists[0].name}}</h2>
+            <p id="trackLength"><b>Track length:</b> {{results.tracks.items[0].duration_ms | trackLength}}</p>
+        </div>
     </div>
 </div>

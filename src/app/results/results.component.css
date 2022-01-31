@@ -7,13 +7,19 @@
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 16px;
     text-align: center;
     background-color: #fff;
     border-radius: 10px;
+    background-size: 100% 100%;
 }
 
-h1{
+.cardContent {
+    background: rgb(255, 255, 255, .9);
+    border-radius: 10px;
+    padding: 16px;
+}
+
+h1 {
     font-size: 32px;
     font-weight: bold;
 }
