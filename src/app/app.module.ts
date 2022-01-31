@@ -6,12 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ResultsComponent } from './results/results.component';
+import { TrackLengthPipe } from './track-length.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    ResultsComponent
+    ResultsComponent,
+    TrackLengthPipe
   ],
   imports: [
     BrowserModule,

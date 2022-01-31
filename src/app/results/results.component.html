@@ -2,6 +2,6 @@
     <div class="card">
         <h1> {{results.tracks.items[0].name}}</h1>
         <h2> {{results.tracks.items[0].artists[0].name}}</h2>
-        <p><b>Track length:</b> {{results.tracks.items[0].duration_ms}}</p>
+        <p><b>Track length:</b> {{results.tracks.items[0].duration_ms | trackLength}}</p>
     </div>
 </div>
