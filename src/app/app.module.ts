@@ -7,13 +7,15 @@ import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ResultsComponent } from './results/results.component';
 import { TrackLengthPipe } from './track-length.pipe';
+import { SafeUrlPipe } from './safe-url.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     ResultsComponent,
-    TrackLengthPipe
+    TrackLengthPipe,
+    SafeUrlPipe
   ],
   imports: [
     BrowserModule,

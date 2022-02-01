@@ -10,6 +10,8 @@ export class ResultsComponent {
   @Input() results:any
 
   Object = Object;
+
+  spotifyPlayerURL = "https://open.spotify.com/embed/track/"
   
   constructor() { }
 
