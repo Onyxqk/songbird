@@ -11,6 +11,7 @@ export class DataService {
   constructor(private _http: HttpClient) { }
 
   public getData(userInput:string ) {
-    return this._http.get(BASE_REST_URL + "?" + userInput)
+    let queryParams = { "query": userInput }
+    return this._http.get(BASE_REST_URL, { params: queryParams})
   }
 }
