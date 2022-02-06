@@ -1,2 +1,2 @@
-<input type="text" class="search" aria-label="Search" id="search" placeholder="Search for a song or music artist"  #userInput (keyup.enter)="search(userInput.value)" autofocus>
+<input type="text" class="search" aria-label="Search for a song or music artist" id="search" placeholder="Search for a song or music artist"  #userInput (keyup.enter)="search(userInput.value)" autofocus>
 <app-results *ngIf="searchResultsString.length > 1" [results]="searchResults"></app-results>
