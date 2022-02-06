@@ -1,7 +1,11 @@
-<div class="toolbar">
-  <a class="toolbar-title" routerLink="" routerLinkActive="active">
-    <img src="/assets/songbird.png" width="64" height="64" aria-labelledby="songbird">
-    <span id="songbird" class="toolbar-title-text">Songbird</span>
-  </a>
-</div>
-<router-outlet></router-outlet>
+<header>
+  <div class="toolbar">
+    <a class="toolbar-title" routerLink="" routerLinkActive="active">
+      <img src="/assets/songbird.png" width="64" height="64" alt="">
+      <h1 id="songbird" class="toolbar-title-text">Songbird</h1>
+    </a>
+  </div>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>

@@ -5,6 +5,7 @@
     display: block;
     width: 100%;
     text-align: center;
+    height: 70.95px;
 }
 
 .toolbar-title {
@@ -17,5 +18,6 @@
 .toolbar-title-text {
     display: inline-block;
     vertical-align: super;
-
+    font-size: xx-large;
+    font-weight: normal;
 }
