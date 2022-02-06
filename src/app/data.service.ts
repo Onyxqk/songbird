@@ -10,6 +10,8 @@ export class DataService {
 
   constructor(private _http: HttpClient) { }
 
+  // takes user input as parameter, passes it to the connectToSpotifyAPI REST endpoint as a query parameter
+  // returns the data retrieved from HTTP GET request made to endpoint
   public getData(userInput:string ) {
     let queryParams = { "query": userInput }
     return this._http.get(BASE_REST_URL, { params: queryParams})
