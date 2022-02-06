@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
+import { Component, OnInit } from '@angular/core'
+import { DataService } from '../data.service'
 
 @Component({
   selector: 'app-search',
@@ -8,7 +8,7 @@ import { DataService } from '../data.service';
 })
 export class SearchComponent implements OnInit {
 
-  searchResults:object = {}
+  searchResults: object = {}
   searchResultsString: string = ""
 
   constructor(private dataService: DataService) { }
@@ -17,12 +17,12 @@ export class SearchComponent implements OnInit {
   }
 
   search(userInput: string) {
-    if(userInput.length >=1) {
+    if (userInput.length >= 1) {
       this.dataService.getData(userInput)
-      .subscribe(data => {
-        this.searchResults=data
-      })
-      this.searchResultsString = JSON.stringify(this.searchResults);
+        .subscribe(data => {
+          this.searchResults = data
+        })
+      this.searchResultsString = JSON.stringify(this.searchResults)
     }
   }
 

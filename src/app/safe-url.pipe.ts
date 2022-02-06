@@ -10,7 +10,7 @@ export class SafeUrlPipe implements PipeTransform {
   
   // takes url as a parameter and returns sanitized version to enable use of iframes
   transform(url: string) {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url)
   }
 
 }

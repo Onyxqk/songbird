@@ -7,12 +7,12 @@ import { Component, Input } from '@angular/core';
 })
 export class ResultsComponent {
 
-  @Input() results:any
+  @Input() results: any
 
-  Object = Object;
+  Object = Object
 
   spotifyPlayerURL = "https://open.spotify.com/embed/track/"
-  
+
   constructor() { }
 
 }
