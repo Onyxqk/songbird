@@ -19,12 +19,16 @@ describe('Scenario: Initial load', () => {
             cy.get('#toolbar').contains('Songbird')
         })
 
-        it('And the search component is displayed', () => {
+        it('And the search field is displayed', () => {
             cy.get('#search').should('be.visible')
         })
 
         it('And the search placeholder text is Search for a song or music artist', () => {
             cy.get('#search').invoke('attr', 'placeholder').should('eq', 'Search for a song or music artist')
+        })
+
+        it('And the search field is autofocused', () => {
+            cy.get('#search').invoke('attr', 'autofocus').should('exist')
         })
 
         it('And there are no detected accessibility violations', () => {
