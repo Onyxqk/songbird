@@ -1,3 +1,6 @@
+<div id="noResultsFound" *ngIf="results.tracks.items[0]===undefined">
+    <h1 style="text-align: center; color: #D8D8D8">No results found</h1>
+</div>
 <div id="results" class="results" *ngFor="let tracks of Object.keys(results.tracks);  index as i">
     <div *ngIf="results.tracks.items[0]!==undefined">
         <div id="card" class="card" style="background-image: url({{results.tracks.items[i].album.images[0].url}});">
@@ -11,8 +14,5 @@
                     style="border-radius: 10px;"></iframe>
             </div>
         </div>
-    </div>
-    <div *ngIf="results.tracks.items[0]===undefined">
-        <h1 style="text-align: center">No results found</h1>
     </div>
 </div>
