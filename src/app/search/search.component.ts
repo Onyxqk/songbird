@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 import { DataService } from '../data.service'
 
 @Component({
@@ -6,15 +6,12 @@ import { DataService } from '../data.service'
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
 
   searchResults: object = {}
   searchResultsString: string = ""
 
   constructor(private dataService: DataService) { }
-
-  ngOnInit(): void {
-  }
 
   search(userInput: string) {
     if (userInput.length >= 1) {
