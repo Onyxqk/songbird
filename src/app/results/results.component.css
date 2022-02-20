@@ -1,3 +1,8 @@
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
 .results {
     width: 350px;
     margin-left: auto;
@@ -13,14 +18,18 @@
     background-size: 100% 100%;
 }
 
-.cardContent {
+.card-content {
     background: rgb(255, 255, 255, .9);
     border-radius: 10px;
     padding: 16px;
     overflow-wrap: break-word;
 }
 
-h1 {
-    font-size: 32px;
-    font-weight: bold;
+.no-results-found {
+    text-align: center;
+    color: #D8D8D8;
+}
+
+.spotify-player {
+    border-radius: 10px;
 }

@@ -1,17 +1,23 @@
+<!-- displays 'No results found' if no tracks are returned from Spotify results -->
 <div id="noResultsFound" *ngIf="results.tracks.items[0]===undefined">
-    <h1 style="text-align: center; color: #D8D8D8">No results found</h1>
+    <h1 class="no-results-found">No results found</h1>
 </div>
-<div class="results" *ngFor="let tracks of Object.keys(results.tracks);  index as i">
-    <div *ngIf="results.tracks.items[0]!==undefined">
+<!-- displays results if tracks are returned from Spotify results -->
+<div *ngIf="results.tracks.items[0]!==undefined">
+    <!-- goes through each track returned from Spotify results and displays the data in card format -->
+    <div class="results" *ngFor="let tracks of Object.keys(results.tracks);  index as i">
+        <!-- each result card has the album cover of its track as its background -->
         <div id="card-{{i}}" class="card" style="background-image: url({{results.tracks.items[i].album.images[0].url}});">
-            <div id="cardContent-{{i}}" class="cardContent">
+            <!-- card content includes track name, artist name, track length, and if the track is explicit -->
+            <div id="cardContent-{{i}}" class="card-content">
                 <h1 id="trackName-{{i}}"> {{results.tracks.items[i].name}}</h1>
                 <h2 id="artistName-{{i}}"> {{results.tracks.items[i].artists[0].name}}</h2>
                 <p id="trackLength-{{i}}"><b>Track length:</b> {{results.tracks.items[i].duration_ms | trackLength}}</p>
                 <p *ngIf="results.tracks.items[i].explicit"><b>Explicit</b></p>
+                <!-- each result card has a dynamically generated embedded Spotify player for its track -->
                 <iframe [src]='spotifyPlayerURL + results.tracks.items[i].uri.substring(14) | safeUrl' width="300"
                     height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"
-                    style="border-radius: 10px;" aria-label="Spotify embedded player"></iframe>
+                    class="spotify-player" aria-label="Spotify embedded player"></iframe>
             </div>
         </div>
     </div>
