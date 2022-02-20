@@ -11,12 +11,16 @@ Feature: Search for a song or music artist and receive results
         And the search field is autofocused
         And there are no detected accessibility violations
 
-    Scenario: Searching and receiving results
+    Scenario: Searching, receiving results, and reloading the page
         Given the user launches Songbird
         When the page is loaded
         And the user enters <Juice WRLD> into the search field
         And the user presses enter (return) on the keyboard
         Then the result cards for <Juice WRLD> display
+        And there are no detected accessibility violations
+        When the user clicks on the toolbar
+        Then the page is reloaded
+        And the search placeholder text is 'Search for a song or music artist'
         And there are no detected accessibility violations
 
     Scenario: Searching with no results found

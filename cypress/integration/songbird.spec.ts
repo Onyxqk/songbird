@@ -61,6 +61,15 @@ describe('Scenario: Searching and receiving results', () => {
                 // test the page for accessibility
                 cy.checkA11y()
             })
+
+            it('When the user clicks on the toolbar' + 'Then the page is reloaded' +
+                'And the search placeholder text is Search for a song or music artist' +
+                'And there are no detected accessibility violations', () => {
+                    cy.get('#toolbar').click()
+                    cy.get('#search').invoke('attr', 'placeholder').should('eq', 'Search for a song or music artist')
+                    cy.injectAxe()
+                    cy.checkA11y()
+                })
         })
 })
 
