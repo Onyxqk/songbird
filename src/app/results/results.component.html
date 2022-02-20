@@ -1,17 +1,17 @@
 <div id="noResultsFound" *ngIf="results.tracks.items[0]===undefined">
     <h1 style="text-align: center; color: #D8D8D8">No results found</h1>
 </div>
-<div id="results" class="results" *ngFor="let tracks of Object.keys(results.tracks);  index as i">
+<div class="results" *ngFor="let tracks of Object.keys(results.tracks);  index as i">
     <div *ngIf="results.tracks.items[0]!==undefined">
-        <div id="card" class="card" style="background-image: url({{results.tracks.items[i].album.images[0].url}});">
-            <div id="cardContent" class="cardContent">
-                <h1 id="trackName"> {{results.tracks.items[i].name}}</h1>
-                <h2 id="artistName"> {{results.tracks.items[i].artists[0].name}}</h2>
-                <p id="trackLength"><b>Track length:</b> {{results.tracks.items[i].duration_ms | trackLength}}</p>
+        <div id="card-{{i}}" class="card" style="background-image: url({{results.tracks.items[i].album.images[0].url}});">
+            <div id="cardContent-{{i}}" class="cardContent">
+                <h1 id="trackName-{{i}}"> {{results.tracks.items[i].name}}</h1>
+                <h2 id="artistName-{{i}}"> {{results.tracks.items[i].artists[0].name}}</h2>
+                <p id="trackLength-{{i}}"><b>Track length:</b> {{results.tracks.items[i].duration_ms | trackLength}}</p>
                 <p *ngIf="results.tracks.items[i].explicit"><b>Explicit</b></p>
                 <iframe [src]='spotifyPlayerURL + results.tracks.items[i].uri.substring(14) | safeUrl' width="300"
                     height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"
-                    style="border-radius: 10px;"></iframe>
+                    style="border-radius: 10px;" aria-label="Spotify embedded player"></iframe>
             </div>
         </div>
     </div>

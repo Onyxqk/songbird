@@ -39,3 +39,51 @@ describe('Scenario: Initial load', () => {
         })
     })
 })
+
+describe('Scenario: Searching and receiving results', () => {
+
+    describe('Given the user launches Songbird' + ' When the page is loaded' +
+        'And the user enters <Juice WRLD> into the search field ' + 'And the user presses enter (return) on the keyboard', () => {
+
+            // load Songbird running on localhost
+            before(() => {
+                cy.visit('localhost:4200/')
+                cy.get('#search').type('Juice WRLD{enter}')
+            })
+
+            it('Then the result cards display', () => {
+                cy.get('.results').contains('Juice WRLD')
+            })
+
+            it('And there are no detected accessibility violations', () => {
+                // inject Axe accessibility testing
+                cy.injectAxe()
+                // test the page for accessibility
+                cy.checkA11y()
+            })
+        })
+})
+
+describe('Scenario: Searching with no results found', () => {
+
+    describe('Given the user launches Songbird' + ' When the page is loaded' +
+        'And the user enters <huehvrbeu3u4u754848390549> into the search field ' + 'And the user presses enter (return) on the keyboard', () => {
+
+            // load Songbird running on localhost
+            before(() => {
+                cy.visit('localhost:4200/')
+                cy.get('#search').type('huehvrbeu3u4u754848390549{enter}')
+            })
+
+            it('Then the result cards display', () => {
+                cy.get('#noResultsFound').contains('No results found')
+            })
+
+            it('And there are no detected accessibility violations', () => {
+                // inject Axe accessibility testing
+                cy.injectAxe()
+                // test the page for accessibility
+                cy.checkA11y()
+            })
+        })
+})
