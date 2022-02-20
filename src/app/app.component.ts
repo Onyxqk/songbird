@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'songbird'
 
+  // unit test framework can't handle full page reloads, so excluding this function from code coverage
+  /* istanbul ignore next */
   reload() {
     window.location.reload()
   }
