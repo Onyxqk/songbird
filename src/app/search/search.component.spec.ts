@@ -29,8 +29,9 @@ describe('SearchComponent', () => {
 
   it('should not search if user does not enter valid input', () => {
     let mockDataService = TestBed.inject(DataService)
+    spyOn(mockDataService, 'getData')
     component.search("")
-    expect(mockDataService.getData).not.toHaveBeenCalled
+    expect(mockDataService.getData).not.toHaveBeenCalled()
   })
 
   it('should search based on user input and populate search results', () => {

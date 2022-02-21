@@ -17,7 +17,7 @@ describe('DataService', () => {
   })
 
   it('should get data', () => {
-    expect(service.getData("juice wrld")).toBeDefined
+    expect(service.getData("juice wrld")).toBeDefined()
   })
 
 })
