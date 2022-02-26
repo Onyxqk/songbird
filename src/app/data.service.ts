@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 
+// Amazon API Gateway URL; this URL is the way to send/receive data to/from the connectToSpotifyAPI AWS Lambda function
 const BASE_REST_URL = "https://98zf3e97uc.execute-api.us-east-1.amazonaws.com/connectToSpotifyAPI"
 
 @Injectable({
