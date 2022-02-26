@@ -1,3 +1,4 @@
 <input type="search" id="search" class="search" aria-label="Search for a song or music artist"
     placeholder="Search for a song or music artist" #userInput (keyup.enter)="search(userInput.value)" autofocus>
+<!-- render results component if there is at least one search result -->
 <app-results *ngIf="searchResultsString.length > 1" [results]="searchResults"></app-results>

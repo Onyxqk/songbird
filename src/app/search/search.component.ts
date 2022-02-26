@@ -13,6 +13,7 @@ export class SearchComponent {
 
   constructor(private dataService: DataService) { }
 
+  // passes user input to data service and gets data, stores search results that are returned, and converts to string
   search(userInput: string) {
     if (userInput.length >= 1) {
       this.dataService.getData(userInput)
